@@ -1,0 +1,43 @@
+name: Nodes
+
+# 触发条件
+on:
+  workflow_dispatch:
+
+#  schedule:
+#    - cron: '0 */6 * * *'
+
+jobs:
+  my-job:
+    name: imLam Job
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5  # Python环境
+      with:
+        python-version: '3.x'  # Python 3.x
+        cache: 'pip'  # pip cache
+        
+    - name: install python packages
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Timezone  # UTC+0 → UTC+8
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+      
+    - name: 配置 Git
+      run: |  # 配置 Git 的上传用户名和邮箱
+        git config pull.rebase false
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
+        
+    - name: 更新 Xray
+      run: |  # 更新 Xray 并检查连接
+        curl -sL ${{ secrets.CHECK_PROXIES }} | bash || exit 1
+        
+    - name: 提交更改
+      run: |  # 提交更新的订阅文件
+        git add ./imlam.txt
+        git commit -m "更新订阅文件"
+        git push origin main
