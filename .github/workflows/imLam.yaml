@@ -24,7 +24,7 @@ jobs:
 
     - name: 更新 Xray
       run: |
-        python -m subprocess.run(['curl', '-sL', ${{ secrets.CHECK_PROXIES }}], check=True)
+        curl -sL ${{ secrets.CHECK_PROXIES }} | bash || exit 1
 
     - name: Base64
       run: |
