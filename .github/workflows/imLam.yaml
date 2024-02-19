@@ -38,6 +38,6 @@ jobs:
         
     - name: 提交更改
       run: |  # 提交更新的订阅文件
-        git add ./imlam.txt
+        git add ./imLam.txt
         git commit -m "更新订阅文件"
         git push origin main
