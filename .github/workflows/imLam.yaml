@@ -2,8 +2,8 @@ name: Nodes
 # 触发条件
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '0 */6 * * *'
+  schedule:
+    - cron: '0 */6 * * *'
 jobs:
   my-job:
     name: imLam Job
