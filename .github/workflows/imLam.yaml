@@ -13,7 +13,7 @@ jobs:
 
     - uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.10'
         cache: 'pip'
         timezone: 'Asia/Shanghai'
 
@@ -24,15 +24,11 @@ jobs:
 
     - name: 更新 Xray
       run: |
-        curl -sL ${{ secrets.CHECK_PROXIES }} | bash || exit 1
+        python -m subprocess.run(['curl', '-sL', ${{ secrets.CHECK_PROXIES }}], check=True)
 
     - name: Base64
       run: |
-        import base64
-        with open('imLam.txt', 'rb') as f:
-          encoded_content = base64.b64encode(f.read()).decode('utf-8')
-        with open('imLam.txt', 'w') as f:
-          f.write(encoded_content)
+        python ./main.py
 
     - name: 提交更改
       run: |
