@@ -36,6 +36,10 @@ jobs:
       run: |  # 更新 Xray 并检查连接
         curl -sL ${{ secrets.CHECK_PROXIES }} | bash || exit 1
         
+    - name: Base64
+      run: |  将imLam.txt内容转Base64
+        python ./main.py
+        
     - name: 提交更改
       run: |  # 提交更新的订阅文件
         git add ./imLam.txt
