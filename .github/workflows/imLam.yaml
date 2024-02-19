@@ -37,7 +37,7 @@ jobs:
         curl -sL ${{ secrets.CHECK_PROXIES }} | bash || exit 1
         
     - name: Base64
-      run: |  将imLam.txt内容转Base64
+      run: |  # 将imLam.txt内容转Base64
         python ./main.py
         
     - name: 提交更改
