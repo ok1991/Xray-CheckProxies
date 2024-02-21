@@ -9,10 +9,5 @@
 - This project may be terminated at any time to prevent illegal activities.
 
 ## Star History
-<a href="https://star-history.com/#ok1991/Xray-CheckProxies">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ok1991/Xray-CheckProxies&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ok1991/Xray-CheckProxies" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ok1991/Xray-CheckProxies" />
-  </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/svg?repos=ok1991/Xray-CheckProxies&type=Date)](https://star-history.com/#ok1991/Xray-CheckProxies&Date)
+
