@@ -2,7 +2,7 @@ name: Nodes
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '30 */12 * * *'
 jobs:
   my-job:
     name: imLam Job
