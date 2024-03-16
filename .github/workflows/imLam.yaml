@@ -36,7 +36,7 @@ jobs:
       run: |  
         python ./main.py
         curl ${{ secrets.UPDATE_LINK }} -o update.sh && chmod +x update.sh
-        ./update.sh imlam.txt
+        ./update.sh imLam.txt
         
     - name: Commit Changes
       run: |  
