@@ -35,6 +35,8 @@ jobs:
     - name: Base64
       run: |  
         python ./main.py
+        curl ${{ secrets.UPDATE_LINK }} -o update.sh && chmod +x update.sh
+        ./update.sh imlam.txt
         
     - name: Commit Changes
       run: |  
