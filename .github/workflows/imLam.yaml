@@ -36,10 +36,10 @@ jobs:
       run: |  
         python ./main.py
 
-    - name: Upload
-      run: | 
-        curl ${{ secrets.UPDATE_LINK }} -o update.sh && chmod +x update.sh
-        ./update.sh imLam.txt
+#    - name: Upload
+#      run: | 
+#        curl ${{ secrets.UPDATE_LINK }} -o update.sh && chmod +x update.sh
+#        ./update.sh imLam.txt
         
     - name: Commit Changes
       run: |  
